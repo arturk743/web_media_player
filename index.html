@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Web Media Player</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<div class="container-fluid">
+  
+  <div class="row">
+
+    <div class="col-sm-6">
+
+      <div class="form-group">
+        <h3>Enter URL</h3>
+        <input class="form-control" id="inputdefault" type="text" name="url">
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Select video</button>
+
+        <div id="myDropdown" class="dropdown-content">
+          <a onclick="changeVideo('Videos/Bunny/Bunny.m3u8');">Bunny 480p</a>
+          <a onclick="changeVideo('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');">Bunny - adaptive qualities</a>
+          <a onclick="changeVideo('https://test-streams.mux.dev/test_001/stream.m3u8');">ARTE China, ABR</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Select quality</button>
+
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="col-sm-6">
+      <h3>Video Information</h3>
+      <p id="bitrate"></p>
+      <p id="height"></p>
+      <p id="width"></p>
+      <p id="video_coded"></p>
+      <p id="audio_codec"></p>
+    </div>
+
+  </div>
+
+  <div class="row embed-responsive embed-responsive-16by9" style="height: 720px">
+    <video id="video" autoplay="" controls="" class="videoCentered"></video>
+  </div>
+
+</div>
+<script src="js/main.js"></script>
+</html>
